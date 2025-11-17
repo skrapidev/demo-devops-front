@@ -11,3 +11,15 @@ jobs:
       - name: pull and checkout from git repository
         run: |
           echo "Pulling latest changes from feature branch"
+      - name: Set up Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install npm packages
+        run: npm install
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli@latest
+      - name: Run tests
+        run: npm test -- --watch=false --browsers=ChromeHeadless
+      - name: Build Angular app
+        run: ng build --prod
