@@ -1,0 +1,13 @@
+name: build and test feature branch
+on:
+  push:
+    branches:
+      - 'feature/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: pull and checkout from git repository
+        run: |
+          echo "Pulling latest changes from feature branch"
