@@ -5,7 +5,7 @@ on:
       - 'feature/**'
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - name: pull and checkout from git repository
@@ -18,8 +18,8 @@ jobs:
       - name: Install npm packages
         run: npm install
       - name: Install Angular CLI
-        run: npm install -g @angular/cli@15.2.6
+        run: npm install -g @angular/cli@latest
       - name: Run tests
         run: npm test -- --watch=false --browsers=ChromeHeadless
       - name: Build Angular app
-        run: ng build --prod
+        run: ng build
