@@ -18,7 +18,7 @@ jobs:
       - name: Install npm packages
         run: npm install
       - name: Install Angular CLI
-        run: npm install -g @angular/cli@latest
+        run: npm install -g @angular/cli@15.2.6
       - name: Run tests
         run: npm test -- --watch=false --browsers=ChromeHeadless
       - name: Build Angular app
